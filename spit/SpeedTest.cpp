@@ -1,3 +1,10 @@
+// the default setup of this starting SpeedTest.cpp should be around 2-3s
+
+//>g++ -v -Wall -Weffc++ SpeedTest.cpp -o ./bin/SpeedTest
+//> ./bin/SpeedTest 
+//counter = 2500000000, computed in = 4.457211000000s
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,8 +25,3 @@ int main() {
   return 0;
 }
 
-// the default setup of this starting SpeedTest.cpp should be around 2-3s
-
-//>g++ -v -Wall -Weffc++ SpeedTest.cpp -o ./bin/SpeedTest
-//> ./bin/SpeedTest 
-//counter = 2500000000, computed in = 4.457211000000s

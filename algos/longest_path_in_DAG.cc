@@ -1,3 +1,9 @@
+// Compile with
+// $ g++ -v -Wall -Weffc++ -g longest_path_in_DAG.cc -o bin/longest_path_in_DAG
+// $ bin/longest_path_in_DAG
+// Following are longest distances from source vertex 1 
+// INF 0 2 9 8 10  
+
 // A C++ program to find single source longest distances
 // in a DAG
 #include <iostream>
@@ -159,6 +165,8 @@ int main()
     "source vertex "
     << s << " \n";
     g.longestPath(s);
+    
+    cout << " \n";
     
     return 0;
 }

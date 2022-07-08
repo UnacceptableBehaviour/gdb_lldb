@@ -5,10 +5,10 @@
 // create bits dirctory here
 // /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/bits/stdc++.h
 // copy /stdc++.h into bits
-// $  g++ -v -Wall -Weffc++ -g karp_rabin.cc -o k_r
-// ./k_r
-// $ Pattern found at index 0
-// $ Pattern found at index 10
+// $  g++ -v -Wall -Weffc++ -g karp_rabin.cc -o bin/k_r
+// $ bin/k_r
+// Pattern found at index 0
+// Pattern found at index 10
 
 /* Following program is a C++ implementation of Rabin Karp 
 Algorithm given in the CLRS book */
