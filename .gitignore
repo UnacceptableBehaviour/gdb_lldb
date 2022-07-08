@@ -1,7 +1,13 @@
 # for osx
 .DS_Store
 
+
+# packages
+*.dSYM
+
 # ignore directory and contents
 /__pycache__
 /scratch
 /venv
+
+/bin
