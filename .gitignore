@@ -1,6 +1,8 @@
 # for osx
 .DS_Store
 
+test_c++
+test_c++.cc
 
 # packages
 *.dSYM
