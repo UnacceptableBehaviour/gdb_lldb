@@ -12,4 +12,5 @@ test_c++.cc
 /scratch
 /venv
 
+bin/
 /bin
