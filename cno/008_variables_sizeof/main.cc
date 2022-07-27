@@ -38,17 +38,18 @@ int main() {
     // string myText = "Hello";     // String
     
                                     // sizeof - bytes
-    bool z = true;                  //
-    char a = 'A';                   //
-    short b = 32;                   //
-    int c = 44;                     //
-    long d = 2394;                  //
-    long long e = 240802344;        //
-                                    //
-    float f = 5.3f;                 //
-    float g = 5.9;                  //
-    double h = 500.345;             //
-    long double l = 2500.9485;      //
+                                    // osx/i7
+    bool z = true;                  // 1   
+    char a = 'A';                   // 1   
+    short b = 32;                   // 2   
+    int c = 44;                     // 4   
+    long d = 2394;                  // 8   
+    long long e = 240802344;        // 8   
+                                    // 
+    float f = 5.3f;                 // 4   
+    float g = 5.9;                  // 4   
+    double h = 500.345;             // 8   
+    long double l = 2500.9485;      // 16    
     
     
 
@@ -63,10 +64,18 @@ int main() {
     std::cout << " float                   " << "   " <<sizeof(g)  << "   " << g <<  '\n';
     std::cout << " double                  " << "   " <<sizeof(h)  << "   " << h <<  '\n';
     std::cout << " long double             " << "   " <<sizeof(l)  << "   " << l <<  '\n';
-                                                
-    
-
     
 }
-
+// o/p
+ //bool                       1   1
+ //char                       1   A
+ //short                      2   32
+ //int                        4   44
+ //long                       8   2394
+ //long long                  8   240802344
+ //                        
+ //float 5.3f                 4   5.3
+ //float                      4   5.9
+ //double                     8   500.345
+ //long double                16   2500.95   
 
