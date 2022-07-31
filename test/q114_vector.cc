@@ -149,8 +149,16 @@ int main() {
 // pointer, it does not change const-ness to follow the const-ness of its instance of S but remains a
 // const pointer to a non-const object.
 
-
-
+// auto&&  vs   const auto&
+// A "universal reference", auto&& or T&&, will bind to anything.
+// https://stackoverflow.com/questions/13230480/what-does-auto-tell-us
+// You might say, well why not just use a const auto& because that will also bind to anything?
+// The problem with using a const reference is that it's const!
+// You won't be able to later bind it to any non-const references or invoke any member functions
+// that are not marked const.
+//
+// more on Universal Refs - Scott Myers TODO
+// https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers
 
 
 
@@ -184,7 +192,7 @@ int main() {
 //  std::cout << " " << i;
 //}
 //
-//struct classname {
+//struct classname {               // functor
 //  void operator() (int i) {
 //    std::cout << " " << i;
 //  }
