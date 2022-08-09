@@ -132,6 +132,9 @@ struct a_string {
 void print(const char* s) { std::cout << s << "\n"; }   // 
 a_string make_string() { return a_string{}; }
   // a_string{}; call ctor
+  // () uses value initialization if the parentheses are empty, or direct initialization if non-empty.
+  // {} uses list initialization, which implies value initialization if the braces are empty,
+  //    or aggregate initialization if the initialized object is an aggregate.
 
 int main() {
    std::cout << "a_string s1 = make_string();" << "\n";
