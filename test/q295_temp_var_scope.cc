@@ -103,31 +103,32 @@ void p(int v, std::string msg=""){
 //}
 
 
-
-
-
-// https://cppquiz.org/
+// https://cppquiz.org/ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 // q295.cc
 
 char a[2] = "0";            // "0" = '0''/0' = decimal 48 00
-                            // heap allocated r/w memory
+                            // heap allocated R/W memory
                             
   
-// https://stackoverflow.com/questions/7903551/when-to-use-const-char-and-when-to-use-const-char  
+// https://stackoverflow.com/questions/7903551/when-to-use-const-char-and-when-to-use-const-char
+// PREFER - ALWAYS USE const
 //const char* a = "0";        // "0" = '0''/0' = decimal 48 00
 //                            // allocated to read only memory - 
-//                      // same as above 115 but deprecated C++03
+
+// DO NOT USE
+//                      // same as above 115 BUT DEPRECATED since C++03
 //char* a = "0";        // "0" = '0''/0' = decimal 48 00
                             
                             
 struct a_string {
-   a_string() { *a='1'; std::cout << "ctor\n";}   // a[0] = '1' = '1''/0' = decimal 49 00
+   a_string() { *a='1'; std::cout << "ctor\n";}    // a[0] = '1' = '1''/0' = decimal 49 00
    ~a_string() { *a='0'; std::cout << "dtor\n"; }  // a[0] = '0' = '0''/0' = decimal 48 00
-   const char* c_str() const { return a; }  // return a = pointer to address of a[]
+   const char* c_str() const { return a; }         // return a = pointer to address of a[]
    // return type const char*
    // c_str() const, means implicit "this" pointer is const-qualified! - REF 1: f() const
    
 };
+// std::string.c_str()  - part of sting API returns C stle string
 
 void print(const char* s) { std::cout << s << "\n"; }   // 
 a_string make_string() { return a_string{}; }
@@ -143,9 +144,9 @@ int main() {
 
    std::cout << "const char* s2 = make_string().c_str();" << "\n";
    const char* s2 = make_string().c_str();  // create temp object  - sets a[0] = '1', a[] = '1''/0'
-                                            // s2 = temp.c_str() = a  -  i think temp goes out of scope at end of c_str{ scope }<--
-                                            // ; temp destructed   - sets a[0] = '0', a[] = '0''/0'
-   print(s2);                   // print 0
+                              // s2 = temp.c_str() = a  -  i think temp goes out of scope at end of c_str{ scope }<--
+                              // ; temp destructed   - sets a[0] = '0', a[] = '0''/0'
+   print(s2);                 // print 0
 
    std::cout << "print(make_string().c_str());" << "\n";
    print(make_string().c_str());// print 1  - temp still in scope until ent of print(){ scope }<--

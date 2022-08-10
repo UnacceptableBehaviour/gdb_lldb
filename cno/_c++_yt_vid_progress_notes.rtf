@@ -6,12 +6,11 @@
 {\*\expandedcolortbl;;\cssrgb\c80867\c80867\c80867;\csgray\c0;\cssrgb\c46054\c0\c80867;
 \cssrgb\c100000\c0\c95501;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww17280\viewh14100\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx7938\tx9072\tx10239\tx11318\tx12447\tx13628\tx14770\tx15887\tx17003\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Brushing up on C++ with {\field{\*\fldinst{HYPERLINK "https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb"}}{\fldrslt this series}} [https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb]\
 \
 Watched - in grey.\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
 \f1\fs22 \cf2 \CocoaLigature0 20220708\
 https://www.youtube.com/watch?v=18c3MTX0PK0 - 001 - Welcome to C++\
@@ -53,8 +52,11 @@ https://www.youtube.com/watch?v=UWAdd13EfM8 - 028 - Interfaces in C++ (Pure Virt
 20220805\
 https://www.youtube.com/watch?v=6OVQ8nh3KP0 - 029 - Visibility in C++\
 https://www.youtube.com/watch?v=ENDaJi08jCU - 030 - Arrays in C++\
-\cf3 20220806\
+20220810\
 https://www.youtube.com/watch?v=ijIxcB9qjaU - 031 - How Strings Work in C++ (and how to use them)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx7938\tx9072\tx10239\tx11318\tx12447\tx13628\tx14770\tx15887\tx17003\pardirnatural\partightenfactor0
+\cf3 20220811\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx7938\tx9072\tx10239\tx11318\tx12447\tx13628\tx14770\tx15887\tx17003\pardirnatural\partightenfactor0
 https://www.youtube.com/watch?v=FeHZHF0f2dw - 032 - String Literals in C++\
 https://www.youtube.com/watch?v=4fJBrditnJU - 033 - CONST in C++\
 https://www.youtube.com/watch?v=bP9z3H3cVMY - 034 - The Mutable Keyword in C++\
@@ -186,7 +188,9 @@ https://www.youtube.com/watch?v=x55jfOd5PEE - 023 - ENUMS in C++\
 	Eg_A = 7, Eg_B, Eg_C			// sequential unsigned char type starting at 7 - less memory\
 \};\
 \
-\cf2 https://www.youtube.com/watch?v=FXhALMsHwEY - 024 - Constructors in C++\cf3 \
+\cf2 https://www.youtube.com/watch?v=FXhALMsHwEY - 024 - 
+\fs32 Constructors
+\fs22  in C++\cf3 \
 Blocking the ctor:\
 	class MC \{\
 	private:\
@@ -202,7 +206,9 @@ Same - remove default ctor\
 https://www.youtube.com/watch?v=oIV2KchSyGQ - 027 - Virtual Functions in C++\
 https://www.youtube.com/watch?v=UWAdd13EfM8 - 028 - Interfaces in C++ (Pure Virtual Functions)\
 https://www.youtube.com/watch?v=6OVQ8nh3KP0 - 029 - Visibility in C++\
-https://www.youtube.com/watch?v=ENDaJi08jCU - 030 - Arrays in C++\cf3 \
+https://www.youtube.com/watch?v=ENDaJi08jCU - 030 - 
+\fs32 Arrays
+\fs22  in C++\cf3 \
 int stack_array[5];				// created on stack - deleted when goes out of scope - end func/\{\}\
 int* heap_array = new int[5];		// lasts until deleted - using (or program ends)\
 delete[] heap_array;\
@@ -220,7 +226,25 @@ c++11 introduces #include<array>
 std::array<int, 5> c11_array; \
 std::c11_array.size(); // size maintained by array\
 \
-https://www.youtube.com/watch?v=ijIxcB9qjaU - 031 - How Strings Work in C++ (and how to use them)\
+\
+\cf2 https://www.youtube.com/watch?v=ijIxcB9qjaU - 031 - How 
+\fs32 Strings
+\fs22  Work in C++ (and how to use them)\cf3 \
+\cf5 When passing sting to a function use\cf3  const& = \cf5 const reference\cf3  to the string isn't copied (onto stack) men date CPU waste\
+EG\
+PrintString(\cf5 const std::string&\cf3  string)\{ bla \}\
+\
+wide_string 2byte per character\
+std::string name = "barny blarney";\
+name.size() \
+name.find("arn")\
+Bool contains = name.find("arn") != std::string::npos;\
+{\field{\*\fldinst{HYPERLINK "https://www.cplusplus.com/reference/string/string/"}}{\fldrslt std::string API cpp/reference}}\
+\
+CONCEPT OF: array guards, stack guards memory set to CCCC\
+Bit like DEADBEEF for heap / stack water marks\
+Template specialisation?\
+\
 https://www.youtube.com/watch?v=FeHZHF0f2dw - 032 - String Literals in C++\
 https://www.youtube.com/watch?v=4fJBrditnJU - 033 - CONST in C++\
 https://www.youtube.com/watch?v=bP9z3H3cVMY - 034 - The Mutable Keyword in C++\
