@@ -1,4 +1,4 @@
-// compile with - C++17
+// compile with - C++17 - see blow for clang++
 //
 // g++ -v -Wall -Weffc++ -std=c++17 test_c++.cc -o test_c++
 // -v 		    verbose show commands issued by compiler / linker
@@ -41,7 +41,6 @@
 // 												# conditional BP
 // (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0' 
 // (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
-											
 
 // quick note about python2 - err WTF? yep . .
 // https://www.legendiary.at/2016/11/27/lldb-nameerror-name-run_one_line-is-not-defined/
@@ -55,33 +54,25 @@
 //           Process 29761 launched: '/Users/simon/a_syllabus/lang/c++/
 //           compile_hello_world_refs_pointers/null_ref' (x86_64)
 
+// clang++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// TODO move this stuff into README.md
+// clang++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// basic compile
+// clang++ -std=c++17 --debug -glldb -Weverything -Wno-c++98-compat -Wno-c++-compat test_c++.cc -o test_c++
 
-//#include<cassert>
-//#include<iostream>
-//using namespace std;
-//
-//#include"interface_demo.h"
-//
-//
-//unsigned int read_io_pin_00 (void) {
-//	volatile int port_pins = 0x50;		// simulate a port read
-//										
-//	return port_pins & 0x01;	
-//}
-//
-//// call_stack(5) to create a 5 frame call stack
-//// set BP on new_depths = 0xFF0
-//int call_stack(int deep, int how_deep = 0){
-//	
-//	volatile long int new_depths = 0xFF << how_deep;
-//	
-//	cout << new_depths << endl;
-//	
-//	if (how_deep <= deep)
-//		call_stack(deep, how_deep+1);
-//	
-//	return 0; 
-//}
+// -Weverything -Wno-c++98-compat -Wno-c++-compat     Turn on all WARNINGS & ERRORS, TURN OFF legacy contradictions
+//          Some diagnostics contradict each other, therefore, users of -Weverything often disable many diagnostics
+//          such as -Wno-c++98-compat and -Wno-c++-compat because they contradict recent C++ standards.
+
+// -std=c++17       C++ 2017 standard - https://clang.llvm.org/cxx_status.html#cxx17 
+
+// --debug          Debug info - https://clang.llvm.org/docs/ClangCommandLineReference.html#id30
+// -glldb           Tune debug information for lldb
+
+
+// static analysis
+// https://clang.llvm.org/docs/UsersManual.html#id36
+
 
 // std::cout << a << b << '\n';
 // std::cout << n << ", " << n << ", " << n << ", " << n << ", " << " \n";
